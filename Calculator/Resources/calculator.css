@@ -1,0 +1,46 @@
+.root {
+    -fx-background-color: #0d1b2a;
+    -fx-border-width: 3
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+#button {
+    -fx-pref-width: 80px;
+    -fx-pref-height: 50px;
+    -fx-background-color: #394966;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+
+#operator {
+    -fx-pref-width: 80px;
+    -fx-pref-height: 50px;
+    -fx-background-color: #087BFA;
+    -fx-text-fill: white;
+}
+
+#operator:hover {
+    -fx-opacity: 0.8;
+}
+
+#operator:pressed {
+    -fx-opacity: 0.5;
+}
+
+#display {
+    -fx-background-color: Black;
+    -fx-text-fill: white;
+}
+
+#equalBtn {
+    -fx-background-color: #FFA500;
+}
+
+#button:hover {
+    -fx-opacity: 0.8;
+}
+
+#button:pressed {
+    -fx-opacity: 0.5;
+}
