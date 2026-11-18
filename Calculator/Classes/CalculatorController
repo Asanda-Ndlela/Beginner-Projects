@@ -1,0 +1,55 @@
+package calculator;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+
+public class CalculatorController {
+    @FXML
+    private TextField display;
+
+    private double left = 0;
+    private String operator = "";
+    private boolean startNewNumber = true;
+
+    @FXML
+    private void onDigit(ActionEvent e) {
+        String digit = ((Button) e.getSource()).getText();
+        if (startNewNumber) {
+            display.setText(digit);
+            startNewNumber = false;
+        } else {
+            display.appendText(digit);
+        }
+    }
+
+    @FXML
+    private void onOperator(ActionEvent e) {
+        left = Double.parseDouble(display.getText());
+        operator = ((Button) e.getSource()).getText();
+        startNewNumber = true;
+    }
+
+    @FXML
+    private void onEquals() {
+        double right = Double.parseDouble(display.getText());
+        double result = switch (operator) {
+            case "+" -> left + right;
+            case "-" -> left - right;
+            case "*" -> left * right;
+            case "/" -> right == 0 ? Double.NaN : left / right;
+            default -> right;
+        };
+        display.setText(Double.isNaN(result) ? "Error" : String.valueOf(result));
+        startNewNumber = true;
+    }
+
+    @FXML
+    private void onClear() {
+        display.setText("0");
+        left = 0;
+        operator = "";
+        startNewNumber = true;
+    }
+}
