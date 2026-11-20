@@ -16,6 +16,10 @@ A JavaFX calculator application with a graphical interface that performs basic a
 
 A JavaFX number guessing game that challenges the player to guess a randomly generated number.
 
+### To Do List App
+
+A JavaFX to do list app that allows you add new task and clear the list and then save the items on a txt file.
+
 **Technologies:** Java, JavaFX
 
 ## Technologies
